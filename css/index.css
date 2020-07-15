@@ -1,3 +1,489 @@
 /* Use your own code or past solution for Great Idea Web Page CSS here! */
-
-
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+  /* border: 2px solid red !important; */
+}
+html,
+body {
+  height: 100%;
+  font-family: 'Titillium Web', sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+/* Copy and paste your work from yesterday here and start to refactor into flexbox */
+/* GENERAL STYLES */
+body {
+  margin: 2% 6%;
+  max-width: 56.25rem;
+}
+@media (min-width: 1000px) {
+  body {
+    margin: 2% auto;
+  }
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: blue;
+}
+/* HEADER NAV STYLES */
+header {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 800px) {
+  header {
+    align-items: center;
+    justify-content: space-around;
+    height: 34.375rem;
+  }
+}
+@media (max-width: 500px) {
+  header {
+    height: auto;
+    padding: 10% 0;
+  }
+}
+header .nav-bar {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 800px) {
+  header .nav-bar {
+    flex-direction: column-reverse;
+    width: 80%;
+    align-items: center;
+    height: 20%;
+  }
+}
+@media (max-width: 500px) {
+  header .nav-bar {
+    width: 100%;
+  }
+}
+header .nav-bar nav {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 800px) {
+  header .nav-bar nav {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  header .nav-bar nav {
+    flex-direction: column;
+    font-size: 1.5rem;
+    padding: 10% 0;
+  }
+}
+header .nav-bar nav a {
+  color: lightgrey;
+}
+@media (max-width: 500px) {
+  header .nav-bar nav a {
+    padding: 6% 4%;
+    width: 100%;
+    border-bottom: 1px solid black;
+    text-align: center;
+  }
+  header .nav-bar nav a:first-child {
+    border-top: 1px solid black;
+  }
+}
+/* HEADER HERO STYLES */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid black;
+  height: 31.25rem;
+}
+@media (max-width: 800px) {
+  .hero {
+    height: auto;
+    justify-content: center;
+    border-bottom: none;
+  }
+}
+@media (max-width: 500px) {
+  .hero {
+    margin: 10% 0 ;
+  }
+}
+.hero > * {
+  text-align: center;
+}
+.hero div {
+  width: 50%;
+}
+@media (max-width: 800px) {
+  .hero div {
+    width: 100%;
+    margin: 2% 0;
+    text-align: center;
+  }
+}
+@media (max-width: 800px) {
+  .hero img {
+    display: none;
+  }
+}
+.hero .hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero .hero-content h1 {
+  font-size: 5em;
+}
+.hero .hero-content a {
+  border: 1px solid;
+  width: 35%;
+  padding: 1.5% 0.5%;
+}
+@media (max-width: 800px) {
+  .hero .hero-content a {
+    width: 45%;
+  }
+}
+/* MAIN SECTION */
+main {
+  padding-bottom: 5%;
+  border-bottom: 1px solid;
+  display: flex;
+  flex-direction: column;
+}
+main section > div {
+  display: flex;
+  flex-direction: column;
+}
+main .top-row {
+  display: flex;
+}
+@media (max-width: 800px) {
+  main .top-row {
+    border-top: 1px solid black;
+    padding-top: 4%;
+  }
+}
+@media (max-width: 500px) {
+  main .top-row {
+    flex-direction: column;
+    margin-bottom: 10%;
+  }
+}
+main .top-row div {
+  width: 50%;
+  padding: 4% 0%;
+}
+@media (max-width: 800px) {
+  main .top-row div {
+    padding: 0 2%;
+    text-align: left;
+    width: 100%;
+    margin: 2% 0;
+  }
+}
+@media (max-width: 500px) {
+  main .top-row div {
+    margin-top: 10%;
+    padding: 0;
+  }
+}
+main img {
+  width: 100%;
+}
+main .bottom-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3%;
+}
+@media (max-width: 500px) {
+  main .bottom-row {
+    flex-direction: column;
+    margin-bottom: 10%;
+  }
+}
+main .bottom-row div {
+  width: 31%;
+}
+@media (max-width: 800px) {
+  main .bottom-row div {
+    padding: 0 2%;
+    text-align: left;
+    width: 100%;
+    margin: 2% 0;
+  }
+}
+@media (max-width: 500px) {
+  main .bottom-row div {
+    margin-top: 10%;
+    padding: 0;
+  }
+}
+/* FOOTER STYLES */
+footer {
+  display: flex;
+  flex-direction: column;
+  margin: 5% 0 15%;
+}
+footer address > * {
+  padding: 1%;
+}
+footer footer small {
+  align-self: center;
+  text-align: center;
+  font-size: 0.8em;
+  margin-top: 5%;
+}
+/* SERVICES PAGE STYLES */
+.services p {
+  line-height: 1.2;
+}
+.services-hero {
+  display: flex;
+  flex-direction: column;
+  height: 15.625rem;
+  margin-top: 2%;
+}
+@media (max-width: 800px) {
+  .services-hero {
+    height: auto;
+  }
+}
+.services-hero h1 {
+  font-size: 1.5em;
+  margin-top: 2%;
+}
+.services-hero img {
+  width: 100%;
+}
+.services-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 56.25rem;
+  margin-top: 10%;
+  padding: 5% 0;
+  border-top: 1px solid;
+  border-bottom: 2px solid;
+}
+@media (max-width: 800px) {
+  .services-main {
+    height: auto;
+  }
+}
+.services-main > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+@media (max-width: 500px) {
+  .services-main > div {
+    flex-direction: column;
+  }
+}
+.services-main section {
+  width: 48%;
+  padding: 2%;
+  border: 1px solid;
+  background: rgba(211, 211, 211, 0.219);
+}
+@media (max-width: 800px) {
+  .services-main section {
+    width: 100%;
+    margin: 2% 0;
+    text-align: center;
+  }
+}
+.services-main button {
+  margin-top: 2%;
+  padding: 10px 12%;
+  border-radius: 0.3125rem;
+  border: 1px solid black;
+  background-color: white;
+}
+.services-main button:hover {
+  outline: auto;
+  color: blue;
+}
+.services-main p {
+  line-height: 1.2;
+  padding: 0.5rem;
+}
+.services-footer section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@media (max-width: 500px) {
+  .services-footer section {
+    flex-direction: column;
+  }
+}
+.services-footer section > * {
+  width: 48%;
+}
+.services-footer div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+@media (max-width: 500px) {
+  .services-footer div {
+    margin-top: 7%;
+    width: auto;
+  }
+}
+.services-footer ul {
+  list-style-type: square;
+  list-style-position: inside;
+}
+.services-footer li {
+  margin-top: 2%;
+}
+.services-footer small {
+  margin-top: 12%;
+}
